@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getStorage } from "firebase/storage";
+import { getStorage, ref, listAll } from "firebase/storage";
 
 const firebaseconfig = {
   apiKey: "AIzaSyAIr3J1HRzlUsIcS4L0tUpvvsq7urBpQ8E",
@@ -15,3 +15,6 @@ const firebaseconfig = {
 
 const app = initializeApp(firebaseConfig);
 const storage = getStorage(app);
+const listRef = ref(storage, "files/uid");
+
+export { storage, listRef, listAll };
